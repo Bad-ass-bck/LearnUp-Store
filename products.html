@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - LearnUp Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .page-title {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .filters-bar {
+            background: var(--white);
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 2rem;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">LearnUp<span style="color:var(--text-main);">Store</span>.</a>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="products.html" class="active">Produits</a>
+                <a href="about.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="products.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; color: white;">Commander</a>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Nos Produits</h1>
+            <p>Découvrez notre sélection exclusive</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-bar">
+        <button class="filter-btn active">Tous</button>
+        <button class="filter-btn">Tech</button>
+        <button class="filter-btn">Mode</button>
+        <button class="filter-btn">Accessoires</button>
+        <button class="filter-btn">Maison</button>
+    </div>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="product-preview-grid">
+                <!-- Repeated Product Cards -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Montre+Connectée" alt="Montre">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tech</div>
+                        <h3 class="product-title">Smart Watch Pro</h3>
+                        <div class="product-price">49.990 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Écouteurs" alt="Ecouteurs">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <h3 class="product-title">AirBass X2</h3>
+                        <div class="product-price">25.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Sac+à+Dos" alt="Sac">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Mode</div>
+                        <h3 class="product-title">Sac Urban Tech</h3>
+                        <div class="product-price">35.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Lampe+LED" alt="Lampe">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Maison</div>
+                        <h3 class="product-title">Lampe Desk Smart</h3>
+                        <div class="product-price">15.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Clavier+Méca" alt="Clavier">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tech</div>
+                        <h3 class="product-title">Clavier RGB Pro</h3>
+                        <div class="product-price">45.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=T-Shirt+Dev" alt="Tshirt">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Mode</div>
+                        <h3 class="product-title">T-Shirt "Code Life"</h3>
+                        <div class="product-price">10.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>LearnUp Store</h4>
+                    <p style="color: #aeaeae;">Votre boutique de référence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="products.html">Produits</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 LearnUp Store.
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

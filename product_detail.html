@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Watch Pro - LearnUp Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+
+        .main-image {
+            background-color: var(--gray-100);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background-color: var(--gray-100);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary);
+        }
+
+        .product-info-detail h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .options-group {
+            margin-bottom: 2rem;
+        }
+
+        .options-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .option-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .badge.active {
+            background-color: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-actions .btn {
+            flex: 1;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(37, 211, 102, 0.39);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.23);
+        }
+
+        .features-list {
+            margin-top: 3rem;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 2rem;
+        }
+
+        .features-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li i {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .product-detail-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">LearnUp<span style="color:var(--text-main);">Store</span>.</a>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="products.html" class="active">Produits</a>
+                <a href="about.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="products.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; color: white;">Commander</a>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <div class="container product-detail-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="https://via.placeholder.com/600x600/e5e7eb/333333?text=Smart+Watch+Front" alt="Produit">
+            </div>
+            <div class="thumbnails">
+                <div class="thumbnail active"
+                    style="background-image: url('https://via.placeholder.com/80x80/e5e7eb/333333?text=1'); background-size: cover;">
+                </div>
+                <div class="thumbnail"
+                    style="background-image: url('https://via.placeholder.com/80x80/e5e7eb/333333?text=2'); background-size: cover;">
+                </div>
+                <div class="thumbnail"
+                    style="background-image: url('https://via.placeholder.com/80x80/e5e7eb/333333?text=3'); background-size: cover;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info-detail">
+            <div style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">TECH & STYLE</div>
+            <h1>Smart Watch Pro</h1>
+            <div class="price-tag">49.990 CFA</div>
+
+            <p class="description">
+                La montre connectée ultime pour booster votre productivité et suivre votre santé.
+                Compatible iOS et Android, autonomie de 7 jours et écran AMOLED ultra-lumineux.
+            </p>
+
+            <div class="options-group">
+                <label>Couleur</label>
+                <div class="option-badges">
+                    <div class="badge active">Noir Minuit</div>
+                    <div class="badge">Argent</div>
+                    <div class="badge">Or Rose</div>
+                </div>
+            </div>
+
+            <div class="cta-actions">
+                <a href="https://wa.me/221770000000?text=Bonjour,%20je%20veux%20commander%20la%20Smart%20Watch%20Pro"
+                    target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                </a>
+            </div>
+
+            <ul class="features-list">
+                <li><i class="fas fa-check-circle"></i> Écran AMOLED 1.7 pouces</li>
+                <li><i class="fas fa-check-circle"></i> Suivi cardiaque et sommeil</li>
+                <li><i class="fas fa-check-circle"></i> Notifications appels & SMS</li>
+                <li><i class="fas fa-check-circle"></i> Étanche IP68</li>
+                <li><i class="fas fa-truck"></i> Livraison Gratuite</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>LearnUp Store</h4>
+                <p style="color: #aeaeae;">L'excellence au quotidien.</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            &copy; 2024 LearnUp Store.
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

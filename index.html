@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnUp Store - L'Innovation à portée de main</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 450px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Products Preview */
+        .product-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            height: 250px;
+            background-color: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gray-200);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-content {
+                margin-bottom: 3rem;
+            }
+
+            .hero::before {
+                top: -10%;
+                right: -50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">LearnUp<span style="color:var(--text-main);">Store</span>.</a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="products.html">Produits</a>
+                <a href="about.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="products.html" class="btn btn-primary"
+                    style="padding: 0.5rem 1rem; color: white;">Commander</a>
+            </nav>
+
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div class="hero-content">
+                    <h1>Le style qui <span>inspire</span> votre quotidien.</h1>
+                    <p>Découvrez une collection exclusive de produits pensés pour vous. Qualité, design et innovation
+                        réunis.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="products.html" class="btn btn-primary">Voir la boutique</a>
+                        <a href="#how-it-works" class="btn btn-outline">Comment ça marche ?</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for Hero Image -->
+                    <img src="https://via.placeholder.com/450x550/6C63FF/ffffff?text=New+Collection"
+                        alt="LearnUp Collection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Nos Incontournables</h2>
+                <p class="text-muted">Les produits les plus plébiscités par nos clients.</p>
+            </div>
+
+            <div class="product-preview-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Montre+Connectée" alt="Montre">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tech & Style</div>
+                        <h3 class="product-title">Smart Watch Pro</h3>
+                        <div class="product-price">49.990 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Écouteurs+Sans+Fil"
+                            alt="Ecouteurs">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <h3 class="product-title">AirBass X2</h3>
+                        <div class="product-price">25.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x300/e5e7eb/333333?text=Pack+Productivité" alt="Pack">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Bureautique</div>
+                        <h3 class="product-title">Pack Productivité</h3>
+                        <div class="product-price">75.000 CFA</div>
+                        <div class="card-actions">
+                            <a href="product_detail.html" class="btn btn-outline"
+                                style="width: 100%; text-align: center;">Voir détails</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="products.html" class="btn btn-primary">Voir tous les produits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" style="background-color: var(--white);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Comment Commander ?</h2>
+                <p>Simple, rapide et sécurisé.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>1. Choisissez</h3>
+                    <p>Parcourez notre catalogue et sélectionnez vos articles préférés.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>2. Commandez</h3>
+                    <p>Cliquez sur "Commander" pour valider votre panier via WhatsApp.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>3. Recevez</h3>
+                    <p>Livraison rapide à domicile ou en point relais sous 24-48h.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Ils nous font confiance</h2>
+            <div class="features-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Super qualité, service client au top. Je recommande vivement LearnUp
+                        Store pour leur sérieux."</p>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <strong>Aminata D.</strong><br>
+                            <small>Dakar, Sénégal</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Livraison super rapide et produits conformes aux photos. Vraiment
+                        satisfait de mon achat."</p>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <strong>Moussa T.</strong><br>
+                            <small>Abidjan, RCI</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"J'adore le design de la montre. Elle fonctionne parfaitement. Merci !"
+                    </p>
+                    <div class="user-info">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <strong>Sophie K.</strong><br>
+                            <small>Yaoundé, Cameroun</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>LearnUp Store</h4>
+                    <p style="color: #aeaeae; margin-bottom: 1rem;">Votre boutique de référence pour des produits
+                        innovants et stylés.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="products.html">Produits</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +221 77 000 00 00</li>
+                        <li><i class="fas fa-envelope"></i> contact@learnupstore.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 LearnUp Store. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
